@@ -91,3 +91,6 @@ weights/
 
 # Ignore by convention
 !.gitignore
+
+# VS Code specific
+.vscode/
