@@ -1,0 +1,93 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Python specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.env
+*.venv
+ENV/
+env/
+venv/
+
+# CMake specific
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs and debug
+*.log
+*.out
+*.err
+*.trace
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+*.lib
+
+# Unit test / coverage reports
+.coverage
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.tox/
+
+# Distribution / packaging
+.Python
+dist/
+build/
+*.egg-info/
+.eggs/
+*.wheel
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Generated files
+*.exe
+*.app
+*.ipa
+*.apk
+*.manifest
+*.spec
+
+# Mac specific
+*.DS_Store
+
+# Windows specific
+*.lnk
+*.bat
+*.cmd
+
+# Temporary files
+*.temp
+*.~
+*.bak
+
+# Model weights
+weights/
+
+# Ignore by convention
+!.gitignore
