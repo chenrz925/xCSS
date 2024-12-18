@@ -30,8 +30,9 @@ CSS tackles these challenges by leveraging:
 
 ## 📖 Citing Our Work
 
-If you use **xCSS** in your research or application, please consider citing our foundational paper:
+If you use **xCSS** in your research or application, please consider citing our foundational papers:
 
+### Primary Reference:
 ```bibtex
 @misc{chen2024cssovercomingposescene,
       title={CSS: Overcoming Pose and Scene Challenges in Crowd-Sourced 3D Gaussian Splatting}, 
@@ -41,6 +42,19 @@ If you use **xCSS** in your research or application, please consider citing our 
       archivePrefix={arXiv},
       primaryClass={cs.CV},
       url={https://arxiv.org/abs/2409.08562}, 
+}
+```
+
+### Additional Reference:
+```bibtex
+@misc{xiao2024mapfreevisualrelocalizationenhanced,
+      title={Map-Free Visual Relocalization Enhanced by Instance Knowledge and Depth Knowledge}, 
+      author={Mingyu Xiao and Runze Chen and Haiyong Luo and Fang Zhao and Juan Wang and Xuepeng Ma},
+      year={2024},
+      eprint={2408.13085},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2408.13085}, 
 }
 ```
 
