@@ -1,0 +1,73 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "NeRF Studio Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/waterch/miniconda3/envs/mast3r/bin/ns-train",
+            "console": "integratedTerminal",
+            "args": [
+                // "xcss", "--data", "/storage/CSScenes/Test",
+                // "xcss", "--data", "/storage/CSScenes/Qianqing-Palace",
+                "xcss", "--data", "/storage/CSScenes/Taj-Falaknuma-Palace",
+                // "xcss", "--data", "/storage/CSScenes/Gold-Beast",
+            ],
+            "env": {
+                "NERFSTUDIO_METHOD_CONFIGS": "xcss=xcss.config:xcss",
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "NeRF Studio Viewer",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/waterch/miniconda3/envs/mast3r/bin/ns-viewer",
+            "console": "integratedTerminal",
+            "args": [
+                "--load-config", "outputs/Gold-Beast/xcss/2025-04-07_150859/config.yml"
+            ],
+            "env": {
+                "NERFSTUDIO_METHOD_CONFIGS": "xcss=xcss.config:xcss",
+                "PYTHONPATH": "${workspaceFolder}",
+                "CC": "gcc-12",
+                "CXX": "g++-12",
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "DISPLAY": ":0"
+            }
+        },
+        {
+            "name": "Kapture Mast3r mapping",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "kapture_mast3r_mapping.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--weights", "checkpoints/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric.pth",
+                // "--dir", "/storage/CSScenes/Test/images",
+                // "--dir", "/storage/CSScenes/Qianqing-Palace/images",
+                "--dir", "/storage/CSScenes/Taj-Falaknuma-Palace/images/",
+                // "--output", "/storage/CSScenes/Test",
+                "--output", "/storage/CSScenes/Taj-Falaknuma-Palace/",
+                // "--pairsfile_path", "/storage/CSScenes/Test/pairs_src.txt",
+                "--pairsfile_path", "/storage/CSScenes/Taj-Falaknuma-Palace/pairs_src.txt",
+            ]
+        },
+    ]
+}

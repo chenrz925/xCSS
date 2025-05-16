@@ -91,18 +91,19 @@ if __name__ == '__main__':
     colmap_db = COLMAPDatabase.connect(colmap_db_path)
     try:
         kapture_to_colmap(kdata, args.input, tar_handler=None, database=colmap_db,
-                          keypoints_type=None, descriptors_type=None, export_two_view_geometry=False)
+                          keypoints_type=None, descriptors_type=None, export_two_view_geometry=True)
         if has_pose:
             generate_priors_for_reconstruction(kdata, colmap_db, priors_txt_path)
 
         colmap_image_pairs = run_mast3r_matching(model, maxdim, patch_size, args.device,
                                                  kdata, records_data_path, image_pairs, colmap_db,
                                                  args.dense_matching, args.pixel_tol, args.conf_thr,
-                                                 args.skip_geometric_verification, args.min_len_track)
+                                                 args.skip_geometric_verification, args.min_len_track, args.output)
         colmap_db.close()
     except Exception as e:
         print(f'Error {e}')
         colmap_db.close()
+        raise e
         exit(1)
 
     if len(colmap_image_pairs) == 0:

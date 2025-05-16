@@ -22,7 +22,7 @@ from mast3r.image_pairs import make_pairs
 def get_argparser():
     parser = argparse.ArgumentParser(description='point triangulator with mast3r from kapture data')
     parser.add_argument('--dir', required=True, help='image dir')
-    parser.add_argument('--scene_graph', default='retrieval-20-1-10-1')
+    parser.add_argument('--scene_graph', default='retrieval-20-10')
     parser.add_argument('--output', required=True, help='txt file')
 
     parser_weights = parser.add_mutually_exclusive_group(required=True)

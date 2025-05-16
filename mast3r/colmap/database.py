@@ -93,6 +93,7 @@ def convert_im_matches_pairs(img0, img1, image_to_colmap, im_keypoints, matches_
 def get_im_matches(pred1, pred2, pairs, image_to_colmap, im_keypoints, conf_thr,
                    is_sparse=True, subsample=8, pixel_tol=0, viz=False, device='cuda'):
     im_matches = {}
+    raw_im_matches = {}
     for i in range(len(pred1['pts3d'])):
         imidx0 = pairs[i][0]['idx']
         imidx1 = pairs[i][1]['idx']
@@ -170,7 +171,8 @@ def get_im_matches(pred1, pred2, pairs, image_to_colmap, im_keypoints, conf_thr,
                                                                   image_to_colmap, im_keypoints,
                                                                   matches_im0, matches_im1, viz)
         im_matches[(imidx0, imidx1)] = colmap_matches
-    return im_matches
+        raw_im_matches[(imidx0, imidx1)] = (matches_im0, matches_im1)
+    return im_matches, raw_im_matches
 
 
 def get_im_matches_from_cache(pairs, cache_path, desc_conf, subsample,

@@ -145,7 +145,7 @@ def get_reconstructed_scene(glomap_bin, outdir, gradio_delete_cache, model, retr
     try:
         kapture_to_colmap(kdata, root_path, tar_handler=None, database=colmap_db,
                           keypoints_type=None, descriptors_type=None, export_two_view_geometry=False)
-        colmap_image_pairs = run_mast3r_matching(model, image_size, 16, device,
+        colmap_image_pairs = run_mast3r_matching(model, image_size, 48, device,
                                                  kdata, root_path, image_pairs, colmap_db,
                                                  False, 5, 1.001,
                                                  False, 3)
